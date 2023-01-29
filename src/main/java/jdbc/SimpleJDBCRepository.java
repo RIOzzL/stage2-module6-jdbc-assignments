@@ -106,6 +106,7 @@ public class SimpleJDBCRepository {
             connection = dataSource.getConnection();
             ps = connection.prepareStatement(deleteUser);
             ps.setLong(1, userId);
+            ps.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
